@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import OffersList from "../offers-list/offers-list.jsx";
 
-const Main = ({cards, onCardTitleClick}) => {
+const Main = ({cards, _onCardTitleClick}) => {
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
@@ -88,7 +88,7 @@ const Main = ({cards, onCardTitleClick}) => {
                 </option>
               </select>
             </form>
-            <OffersList cards={cards} onCardTitleClick={onCardTitleClick} />
+            <OffersList cards={cards} _onCardTitleClick={_onCardTitleClick}  />
           </section>
           <div className="cities__right-section">
             <section className="cities__map map" />
@@ -110,7 +110,7 @@ Main.propTypes = {
       isPremium: PropTypes.bool
     })
   ),
-  onCardTitleClick: PropTypes.func
+  _onCardTitleClick: PropTypes.func
 };
 
 export default Main;

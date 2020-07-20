@@ -1,22 +1,33 @@
-import React from "react";
+import React, {Component} from "react";
 
 import Header from "../header/header.jsx";
 import Main from "../main/main.jsx";
 
-import cardsData from "../../mocks/offers";
+import offersData from "../../mocks/offers";
 
-const App = () => {
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-  const onCardTitleClick = (evt) => {
+    this.state = {
+      cards: offersData
+    };
+
+    this._onCardTitleClick = this._onCardTitleClick.bind(this);
+  }
+
+  _onCardTitleClick(evt) {
     evt.preventDefault();
     console.log(`You are clicked on -> ${evt.target.textContent}`);
-  };
+  }
 
-  return (
-    <>
-      <Header />
-      <Main cards={cardsData} onCardTitleClick={onCardTitleClick} />;
-    </>
-  );
-};
+  render() {
+    return (
+      <>
+        <Header />
+        <Main cards={offersData} _onCardTitleClick={this._onCardTitleClick} />;
+      </>
+    );
+  }
+}
 export default App;
