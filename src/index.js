@@ -1,12 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
-import PropTypes from 'prop-types';
+import offersData from "./mocks/offers";
 
-const init = () => {
-  ReactDOM.render(<App />,
-    document.querySelector(`#root`)
-)
+const init = (data) => {
+  ReactDOM.render(<App offersData={data} />, document.querySelector(`#root`));
 };
 
-init();
+init(offersData);

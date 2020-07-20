@@ -2,14 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Card = ({
-                title,
-                image,
-                type,
-                price,
-                rating,
-                isPremium,
-                _onCardTitleClick
-              }) => {
+  title,
+  image,
+  type,
+  price,
+  rating,
+  isPremium,
+  onCardTitleClick,
+  onCardHover
+}) => {
   return (
     <article className="cities__place-card place-card">
       {isPremium && (
@@ -48,7 +49,8 @@ const Card = ({
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" onClick={_onCardTitleClick}>
+          <a href="#" onClick={onCardTitleClick}
+            onMouseOver={onCardHover}>
             {title}
           </a>
         </h2>
@@ -69,7 +71,8 @@ Card.propTypes = {
   price: PropTypes.number.isRequired,
   rating: PropTypes.number,
   isPremium: PropTypes.bool,
-  _onCardTitleClick: PropTypes.func
+  onCardTitleClick: PropTypes.func,
+  onCardHover: PropTypes.func
 };
 
 export default Card;

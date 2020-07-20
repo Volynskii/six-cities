@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import OffersList from "../offers-list/offers-list.jsx";
 
-const Main = ({cards, _onCardTitleClick}) => {
+const Main = ({cards, onCardTitleClick, onCardHover}) => {
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
@@ -88,7 +88,8 @@ const Main = ({cards, _onCardTitleClick}) => {
                 </option>
               </select>
             </form>
-            <OffersList cards={cards} _onCardTitleClick={_onCardTitleClick}  />
+            <OffersList cards={cards} onCardTitleClick={onCardTitleClick}
+              onCardHover={onCardHover}/>
           </section>
           <div className="cities__right-section">
             <section className="cities__map map" />
@@ -101,16 +102,17 @@ const Main = ({cards, _onCardTitleClick}) => {
 
 Main.propTypes = {
   cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      rating: PropTypes.number,
-      isPremium: PropTypes.bool
-    })
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        rating: PropTypes.number,
+        isPremium: PropTypes.bool
+      })
   ),
-  _onCardTitleClick: PropTypes.func
+  onCardTitleClick: PropTypes.func,
+  onCardHover: PropTypes.func
 };
 
 export default Main;
