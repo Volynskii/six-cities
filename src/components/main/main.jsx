@@ -1,7 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+ import leaflet from "leaflet";
 import OffersList from "../offers-list/offers-list.jsx";
+import Map from "../map/map.jsx";
 
+console.log(leaflet)
+console.log(Map)
 const Main = ({cards, onCardTitleClick, onCardHover}) => {
   return (
     <main className="page__main page__main--index">
@@ -92,7 +96,9 @@ const Main = ({cards, onCardTitleClick, onCardHover}) => {
               onCardHover={onCardHover}/>
           </section>
           <div className="cities__right-section">
-            <section className="cities__map map" />
+            <section className="cities__map map">
+              <Map city={[52.38333, 4.9]} leaflet={leaflet} />
+            </section>
           </div>
         </div>
       </div>
