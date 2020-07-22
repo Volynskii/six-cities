@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import leaflet from "leaflet";
-// import cards from "../../mocks/offers";
 class Map extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +34,7 @@ class Map extends Component {
       .addTo(map);
 
     cards.map((card) => {
-      leaflet.marker(card.coords, {icon, title: card.title}).addTo(map);
+     // leaflet.marker(card.coords, {icon, title: card.title}).addTo(map);
     });
   }
 

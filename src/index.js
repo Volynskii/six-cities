@@ -2,15 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
 import offersData from "./mocks/offers";
-import placesData from "./mocks/places";
+import locationsData from "./mocks/locations";
 
-console.log(placesData);
 
 const init = (data, places) => {
   ReactDOM.render(
-      <App placesData={places} offersData={data} />,
+      <App locationsData={locationsData} offersData={data} />,
       document.querySelector(`#root`)
   );
 };
 
-init(offersData, placesData);
+init(offersData, locationsData);

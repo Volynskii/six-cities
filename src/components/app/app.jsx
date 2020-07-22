@@ -33,11 +33,13 @@ class App extends Component {
 
   render() {
     const {cards} = this.state;
+    const {locationsData} = this.props;
     return (
       <>
         <Header />
         <Main
           cards={cards}
+          locations={locationsData}
           onCardTitleClick={this._onCardTitleClick}
           onCardHover={this._onCardHover}/>;
       </>
@@ -57,6 +59,12 @@ App.propTypes = {
         rating: PropTypes.number,
         isPremium: PropTypes.bool
       })
+  ),
+  locationsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      city: PropTypes.string.isRequired,
+      isActive: PropTypes.bool
+    })
   )
 };
 export default App;
