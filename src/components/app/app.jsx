@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import PropTypes from "prop-types";
 import Header from "../header/header.jsx";
 import Main from "../main/main.jsx";
+// import cards from "../../mocks/offers";
 
 class App extends Component {
   constructor(props) {
