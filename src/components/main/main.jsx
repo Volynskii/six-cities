@@ -5,7 +5,6 @@ import TabsList from "../tabs-list/tabs-list.jsx";
 import Map from "../map/map.jsx";
 import Form from "../form/form.jsx";
 
-console.log(TabsList)
 const Main = ({cards, locations, onCardTitleClick, onCardHover}) => {
   return (
     <main className="page__main page__main--index">
@@ -40,6 +39,12 @@ Main.propTypes = {
         price: PropTypes.number.isRequired,
         rating: PropTypes.number,
         isPremium: PropTypes.bool
+      })
+  ),
+  locations: PropTypes.arrayOf(
+      PropTypes.shape({
+        city: PropTypes.string.isRequired,
+        isActive: PropTypes.bool
       })
   ),
   onCardTitleClick: PropTypes.func,
