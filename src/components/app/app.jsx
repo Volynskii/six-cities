@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       cards: this.props.offersData,
       activeCard: null,
-      lastclickedCard: null
+      lastclickedCard: null,
+      city: [52.38333, 4.9]
     };
     this._onCardTitleClick = this._onCardTitleClick.bind(this);
     this._onCardHover = this._onCardHover.bind(this);
@@ -31,13 +32,14 @@ class App extends Component {
   }
 
   render() {
-    const {cards} = this.state;
+    const {cards, city} = this.state;
     const {locationsData} = this.props;
     return (
       <>
         <Header />
         <Main
           cards={cards}
+          city={city}
           locations={locationsData}
           onCardTitleClick={this._onCardTitleClick}
           onCardHover={this._onCardHover}/>;
@@ -60,10 +62,10 @@ App.propTypes = {
       })
   ),
   locationsData: PropTypes.arrayOf(
-    PropTypes.shape({
-      city: PropTypes.string.isRequired,
-      isActive: PropTypes.bool
-    })
+      PropTypes.shape({
+        city: PropTypes.string.isRequired,
+        isActive: PropTypes.bool
+      })
   )
 };
 export default App;
