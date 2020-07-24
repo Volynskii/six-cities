@@ -9,9 +9,7 @@ const Card = ({
   price,
   currency,
   rating,
-  isPremium,
-  onCardTitleClick,
-  onCardHover
+  isPremium
 }) => {
   return (
     <article className="cities__place-card place-card">
@@ -54,8 +52,10 @@ const Card = ({
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" onClick={onCardTitleClick}
-            onMouseOver={onCardHover}>
+          <a href="#"
+            // onClick={onCardTitleClick}
+            // onMouseOver={onCardHover}
+          >
             {title}
           </a>
         </h2>
