@@ -15,7 +15,6 @@ class Main extends React.Component {
 
   render() {
     const {city, locations, cards, fillOffers} = this.props;
-
     if (!cards.length || !locations.length) {
       return `Загрузка...`;
     }

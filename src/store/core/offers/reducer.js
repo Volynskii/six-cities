@@ -1,4 +1,4 @@
-import { types } from "./types";
+import {types} from "./types";
 
 const initialState = {
   locations: [],
@@ -6,7 +6,7 @@ const initialState = {
   cards: []
 };
 
-export const offersReducer = (state = initialState, { type, payload }) => {
+export const offersReducer = (state = initialState, {type, payload}) => {
   switch (type) {
     case types.FILL_OFFERS:
       return {
