@@ -15,5 +15,4 @@ const init = (data, locations) => {
       document.querySelector(`#root`)
   );
 };
-
 init(offersData, locationsData);

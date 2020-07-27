@@ -5,5 +5,5 @@ import { combineReducers } from "redux";
 import { offersReducer } from "./core/offers/reducer";
 
 export const rootReducer = combineReducers({
-  offers: offersReducer
+  offers: offersReducer,
 });
