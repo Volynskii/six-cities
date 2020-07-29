@@ -7,7 +7,6 @@ class App extends Component {
 
   render() {
     const {sample, sampleTwo} = this.props;
-    console.log(this.props);
     return (
       <>
         <Header />

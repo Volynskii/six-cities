@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import App from "./components/app/app.jsx";
-import {store} from "./store";
+import {store} from "./redux";
 import offersData from "./mocks/offers";
 import locationsData from "./mocks/locations";
-import {compose} from "redux";
 
 const init = (data, locations) => {
   ReactDOM.render(

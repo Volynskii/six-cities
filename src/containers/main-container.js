@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import Main from "../components/main/main.jsx";
+import {fillLocations, fillOffers} from "../redux/offers/actions";
 
-import {fillLocations, fillOffers} from "../store/core/offers/actions";
-import {createStore} from "redux";
-import {off} from "leaflet/src/dom/DomEvent";
+const MainContainer = (props) => {
+  return <Main {...props} />;
+};
 
 const mapStateToProps = ({offers}) => {
-console.log(offers)
   return {
     locations: offers.locations,
     city: offers.city,
