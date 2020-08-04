@@ -2,8 +2,8 @@
 import { combineReducers } from "redux";
 
 // Reducers
-import { offersReducer } from "./offers/reducer";
+import { hotelsReducer } from "./hotels/reducer";
 
 export const rootReducer = combineReducers({
-  offers: offersReducer,
+  hotels: hotelsReducer
 });

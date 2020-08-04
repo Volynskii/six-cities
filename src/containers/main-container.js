@@ -1,21 +1,24 @@
+import React from "react";
 import {connect} from "react-redux";
 import Main from "../components/main/main.jsx";
-import {fillLocations, fillOffers} from "../redux/offers/actions";
+import { getCityOffers, getCityCoords } from "./selectors.js";
+import { getData, setCity } from "../redux/hotels/actions";
 
 const MainContainer = (props) => {
   return <Main {...props} />;
 };
 
-const mapStateToProps = ({offers}) => {
+const mapStateToProps = ({hotels}) => {
   return {
-    locations: offers.locations,
-    city: offers.city,
-    cards: offers.cards
+    locations: hotels.locations,
+    offers: getCityOffers([hotels.offers, hotels.city]),
+    city: hotels.city,
+    cityCoords: getCityCoords([hotels.locationsCoords, hotels.city])
   };
 };
 const mapDispatchToProps = {
-  fillLocations,
-  fillOffers
+  getData,
+  setCity
 };
 
 export default connect(
