@@ -11,7 +11,7 @@ const loadHotels = (hotels) => {
 
   const locationsCoords = locations.map((location) => {
     const currentLocation = hotels.find(
-      (hotel) => hotel.city.name === location
+        (hotel) => hotel.city.name === location
     );
 
     if (!currentLocation || !currentLocation.city) {
@@ -50,7 +50,7 @@ const loadHotels = (hotels) => {
 
   return {
     type: types.GET_HOTELS,
-    payload: { locations, locationsCoords, offers }
+    payload: {locations, locationsCoords, offers}
   };
 };
 

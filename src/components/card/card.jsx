@@ -35,7 +35,7 @@ const Card = ({
         <a href="#" onClick={onCardClick}>
           <img
             className="place-card__image"
-            src={`img/${image}.${imageExtension}`}
+            src={image}
             width="260"
             height="200"
             alt="Place image"
