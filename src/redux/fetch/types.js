@@ -1,2 +1,3 @@
-export const LOAD_DATA = `LOAD_DATA`;
-export const GET_HOTELS = `GET_HOTELS`;
+export const LOADING_START = `LOADING_START`;
+export const LOADING_FINISH = `LOADING_FINISH`;
+export const SET_CITY = 'SET_CITY';

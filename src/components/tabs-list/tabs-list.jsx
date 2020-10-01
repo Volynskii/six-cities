@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import Tab from "../tab/tab.jsx";
 import withActiveItem from "../../hocs/with-active-item.js";
 
-const TabsList = ({ tabs, city, activeItem, setActiveItem, setCity }) => {
+const TabsList = ({tabs, city, activeItem, setActiveItem, setCity}) => {
+  console.log(setCity);
   const getTabs = () => {
     return tabs.map((item, index) => {
       const id = `${item}-${index}`;

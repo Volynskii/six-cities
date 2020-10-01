@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import Header from "../header/header.jsx";
-import MainContainer from "../../containers/main-container.js";
+import MainContainer from "../../containers/main-container/main-container.jsx";
 
 class App extends Component {
 
 
   render() {
-    const {sample, sampleTwo} = this.props;
     return (
       <>
         <Header />

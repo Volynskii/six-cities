@@ -1,15 +1,21 @@
 import * as types from "./types";
 
 const initialState = {
-  hotels: []
+  isLoading: false
 };
 
-export const fetchReducer = (state = initialState, { type, payload }) => {
+export const fetchReducer = (state = initialState, { type }) => {
   switch (type) {
-    case types.GET_HOTELS:
+    case types.LOADING_START:
       return {
         ...state,
-        hotels: payload
+        isLoading: true
+      };
+
+    case types.LOADING_FINISH:
+      return {
+        ...state,
+        isLoading: false
       };
 
     default:
