@@ -8,6 +8,9 @@ class App extends Component {
 
   render() {
     const {
+      email,
+      avatarUrl,
+      isAuth,
       isAuthorizationRequired,
       loginAsync,
       setAuthRequired,
@@ -17,7 +20,12 @@ class App extends Component {
     return (
       <>
 
-        <Header setAuthRequired={setAuthRequired} />
+        <Header
+          email={email}
+          avatarUrl={avatarUrl}
+          isAuth={isAuth}
+          setAuthRequired={setAuthRequired}
+        />
         {isAuthorizationRequired ? (
           <SignIn
             loginAsync={loginAsync}
@@ -33,6 +41,9 @@ class App extends Component {
 }
 
 App.propTypes = {
+  email: PropTypes.string,
+  avatarUrl: PropTypes.string,
+  isAuth: PropTypes.bool,
   isAuthorizationRequired: PropTypes.bool,
   loginAsync: PropTypes.func,
   setAuthRequired: PropTypes.func,
