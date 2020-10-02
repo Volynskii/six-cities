@@ -2,13 +2,13 @@ import "core-js";
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
-import App from "./components/app/app.jsx";
+import AppContainer from "./containers/app-container/app-container.jsx";
  import {store} from "./redux/index";
 
 const init = () => {
   ReactDOM.render(
       <Provider store={store}>
-        <App />
+        <AppContainer />
       </Provider>,
       document.querySelector(`#root`)
   );
