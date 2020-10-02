@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from "react";
 
-const Header = () => {
+const Header = ({setAuthRequired}) => {
+
   return (
     <header className="header">
       <div className="container">
@@ -22,6 +24,7 @@ const Header = () => {
                 <a
                   className="header__nav-link header__nav-link--profile"
                   href="#"
+                  onClick={setAuthRequired}
                 >
                   <div className="header__avatar-wrapper user__avatar-wrapper" />
                   <span className="header__user-name user__name">
@@ -35,6 +38,10 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  setAuthRequired: PropTypes.func
 };
 
 export default Header;
