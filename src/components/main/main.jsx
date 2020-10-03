@@ -69,15 +69,15 @@ class Main extends React.Component {
 
 Main.propTypes = {
   offers: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        currency: PropTypes.string.isRequired,
-        rating: PropTypes.number,
-        isPremium: PropTypes.bool
-      })
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+      rating: PropTypes.number,
+      isPremium: PropTypes.bool
+    })
   ),
   email: PropTypes.string,
   avatarUrl: PropTypes.string,
