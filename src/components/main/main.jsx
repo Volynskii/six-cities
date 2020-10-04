@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 import Header from "../header/header.jsx";
@@ -8,7 +8,7 @@ import Form from "../form/form.jsx";
 import Map from "../map/map.jsx";
 import Footer from "../footer/footer.jsx";
 
-class Main extends React.Component {
+class Main extends Component {
 
   componentDidMount() {
     this.props.getData();
@@ -48,10 +48,10 @@ class Main extends React.Component {
                   offers.length
                 } places to stay in ${city}`}</b>
                 <Form />
-                <OffersList cards={offers} city={city} />
+                <OffersList cards={offers}/>
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map">
+                <section className="cities__map map  map--main">
                   <Map
                     cards={offers}
                     city={[cityCoords.latitude, cityCoords.longitude]}
@@ -70,11 +70,11 @@ class Main extends React.Component {
 Main.propTypes = {
   offers: PropTypes.arrayOf(
       PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        currency: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        image: PropTypes.string,
+        type: PropTypes.string,
+        price: PropTypes.number,
+        currency: PropTypes.string,
         rating: PropTypes.number,
         isPremium: PropTypes.bool
       })

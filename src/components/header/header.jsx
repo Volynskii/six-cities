@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
+const BASE_URL = `https://es31-server.appspot.com/six-cities`;
 const Header = ({email, avatarUrl, isAuthenticated}) => {
 
   return (
@@ -42,7 +43,7 @@ const Header = ({email, avatarUrl, isAuthenticated}) => {
                       <div
                         className="header__avatar-wrapper user__avatar-wrapper"
                         style={{
-                          backgroundImage: `url(${avatarUrl})`,
+                          backgroundImage: `url(${BASE_URL}${avatarUrl})`,
                           borderRadius: `50px`
                         }}
                       />
