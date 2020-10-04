@@ -6,6 +6,7 @@ import TabsList from "../tabs-list/tabs-list.jsx";
 import OffersList from "../offers-list/offers-list.jsx";
 import Form from "../form/form.jsx";
 import Map from "../map/map.jsx";
+import Footer from "../footer/footer.jsx";
 
 class Main extends React.Component {
 
@@ -18,11 +19,10 @@ class Main extends React.Component {
       email,
       avatarUrl,
       city,
-      isAuth,
+      isAuthenticated,
       cityCoords,
       cities,
       offers,
-      setAuthRequired,
       setCity
     } = this.props;
 
@@ -35,8 +35,7 @@ class Main extends React.Component {
         <Header
           email={email}
           avatarUrl={avatarUrl}
-          isAuth={isAuth}
-          setAuthRequired={setAuthRequired}
+          isAuthenticated={isAuthenticated}
         />
         <main className="page__main page__main--index">
           <h1 className="visually-hidden">Cities</h1>
@@ -62,6 +61,7 @@ class Main extends React.Component {
             </div>
           </div>
         </main>
+        <Footer />
       </>
     );
   }
@@ -69,24 +69,23 @@ class Main extends React.Component {
 
 Main.propTypes = {
   offers: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      currency: PropTypes.string.isRequired,
-      rating: PropTypes.number,
-      isPremium: PropTypes.bool
-    })
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        currency: PropTypes.string.isRequired,
+        rating: PropTypes.number,
+        isPremium: PropTypes.bool
+      })
   ),
   email: PropTypes.string,
   avatarUrl: PropTypes.string,
-  isAuth: PropTypes.bool,
+  isAuthenticated: PropTypes.bool,
   cities: PropTypes.arrayOf(PropTypes.string),
   city: PropTypes.string,
   cityCoords: PropTypes.object,
   getData: PropTypes.func,
-  setAuthRequired: PropTypes.func,
   setCity: PropTypes.func
 };
 

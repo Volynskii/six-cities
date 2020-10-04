@@ -5,7 +5,7 @@ import Tab from "../tab/tab.jsx";
 import withActiveItem from "../../hocs/with-active-item/with-active-item.js";
 
 const TabsList = ({tabs, city, activeItem, setActiveItem, setCity}) => {
-  console.log(setCity);
+
   const getTabs = () => {
     return tabs.map((item, index) => {
       const id = `${item}-${index}`;
@@ -34,6 +34,7 @@ const TabsList = ({tabs, city, activeItem, setActiveItem, setCity}) => {
 
 TabsList.propTypes = {
   tabs: PropTypes.arrayOf(PropTypes.string),
+  city: PropTypes.string.isRequired,
   activeItem: PropTypes.string,
   setActiveItem: PropTypes.func,
   setCity: PropTypes.func
