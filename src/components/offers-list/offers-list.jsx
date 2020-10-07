@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import Card from "../card/card.jsx";
 import withActiveItem from "../../hocs/with-active-item/with-active-item.js";
 
-const OffersList = ({ cards, activeItem, setActiveItem }) => {
+const OffersList = ({cards, activeItem, setActiveItem}) => {
+  console.log(cards)
   return (
     <div className="cities__places-list places__list tabs__content">
       {cards.map((item, index) => {
@@ -13,6 +14,7 @@ const OffersList = ({ cards, activeItem, setActiveItem }) => {
         return (
           <Card
             key={index}
+            // id={item.id}
             id={index + 1}
             title={item.title}
             image={item.image}

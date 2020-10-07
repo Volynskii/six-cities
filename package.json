@@ -40,6 +40,7 @@
     "core-js": "^2.6.9",
     "cross-env": "^5.2.0",
     "leaflet": "1.5.1",
+    "moment": "2.24.0",
     "leaflet-map": "^0.2.1",
     "prop-types": "^15.7.2",
     "react": "16.8.6",

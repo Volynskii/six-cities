@@ -6,6 +6,7 @@ import {getData, getOffer} from "../../redux/fetch/actions";
 import {getOfferNeighbourhoods} from "./selectors.js";
 
 export const OfferContainer = (props) => {
+
   return <Offer {...props} />;
 };
 

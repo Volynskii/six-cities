@@ -7,7 +7,7 @@ const initialState = {
   city: null
 };
 
-export const hotelsReducer = (state = initialState, { type, payload }) => {
+export const hotelsReducer = (state = initialState, {type, payload}) => {
   switch (type) {
     case types.GET_HOTELS:
       return {

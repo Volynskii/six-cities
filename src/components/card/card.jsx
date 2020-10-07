@@ -15,7 +15,7 @@ const Card = ({
   isActive,
   setActiveItem
 }) => {
-
+console.log(id)
   const onCardClick = (evt) => {
     evt.preventDefault();
     setActiveItem();
