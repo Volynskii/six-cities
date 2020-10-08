@@ -11,12 +11,13 @@ import SvgSprite from "../svg-sprite/svg-sprite.jsx";
 
 class Offer extends Component {
   componentDidMount() {
-    const {match, getData, getOffer} = this.props;
+    const {match, getData, getOffer, getComments} = this.props;
 
     const id = match.params.id;
-    console.log(id)
+    console.log('OFFER', match.params.id)
     getData();
     getOffer(id);
+    getComments(id);
 
   }
 
@@ -27,9 +28,16 @@ class Offer extends Component {
   }
 
   render() {
-    const {offers, offer, email, avatarUrl, isAuthenticated} = this.props;
+    const {
+      offers,
+      offer,
+      comments,
+      email,
+      avatarUrl,
+      isAuthenticated
+    } = this.props;
 
-    if (!offer || !offers.length) {
+    if (!offer) {
       return `Загрузка...`;
     }
 
@@ -153,7 +161,7 @@ class Offer extends Component {
                     <p className="property__text">{description}</p>
                   </div>
                 </div>
-                <ReviewsList />
+                <ReviewsList comments={comments} />
                 <ReviewForm />
               </div>
             </div>
@@ -184,8 +192,10 @@ Offer.propTypes = {
   avatarUrl: PropTypes.string,
   offer: PropTypes.object,
   offers: PropTypes.array,
+  comments: PropTypes.array,
   match: PropTypes.object,
   getData: PropTypes.func,
-  getOffer: PropTypes.func
+  getOffer: PropTypes.func,
+  getComments: PropTypes.func
 };
 export default Offer;

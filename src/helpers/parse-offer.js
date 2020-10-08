@@ -7,6 +7,7 @@ export const parseOffer = (id, hotels) => {
     cityLocation: offer.city.location,
     image: offer.preview_image,
     isPremium: offer.is_premium,
+    isFavorite: offer.is_favorite,
     maxAdults: offer.max_adults,
     host: {
       id: offer.host.id,
