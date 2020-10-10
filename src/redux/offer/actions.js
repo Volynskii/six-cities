@@ -1,5 +1,5 @@
 import * as types from "./types.js";
-import {parseOffer} from "../../helpers/parseOffer.js";
+import {parseOffer} from "../../helpers/parse-offer.js";
 import {parseComments} from "../../helpers/parse-comments.js";
 
 export const loadOffer = (id, hotels) => {

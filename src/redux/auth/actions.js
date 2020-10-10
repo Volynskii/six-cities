@@ -1,6 +1,6 @@
 import * as types from "./types";
 import {history} from "../index";
-import {parseAuthData} from "../../helpers/parseAuthData.js";
+import {parseAuthData} from "../../helpers/parse-auth-data";
 
 export const loginAsync = (email, password) => (dispatch, _getState, api) => {
   return api

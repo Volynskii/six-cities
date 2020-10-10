@@ -12,8 +12,10 @@ const Card = ({
   currency,
   rating,
   isPremium,
+  isFavorite,
   isActive,
-  setActiveItem
+  setActiveItem,
+  setFavoriteAsync
 }) => {
 console.log(id)
   const onCardClick = (evt) => {
@@ -53,7 +55,13 @@ console.log(id)
             </b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
-          <button className="place-card__bookmark-button button" type="button">
+          <button
+            className={cn(`place-card__bookmark-button  button`, {
+              [`place-card__bookmark-button--active`]: isFavorite
+            })}
+            type="button"
+            onClick={setFavoriteAsync}
+          >
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark" />
             </svg>
@@ -89,10 +97,12 @@ Card.propTypes = {
   currency: PropTypes.string.isRequired,
   rating: PropTypes.number,
   isPremium: PropTypes.bool,
+  isFavorite: PropTypes.bool,
   isActive: PropTypes.bool,
   onCardTitleClick: PropTypes.func,
   onCardHover: PropTypes.func,
-  setActiveItem: PropTypes.func
+  setActiveItem: PropTypes.func,
+  setFavoriteAsync: PropTypes.func
 };
 
 export default Card;
