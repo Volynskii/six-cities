@@ -4,7 +4,6 @@ import {parseComments} from "../../helpers/parse-comments.js";
 
 export const loadOffer = (id, hotels) => {
   const offer = parseOffer(id, hotels);
-
   return {
     type: types.LOAD_OFFER,
     payload: offer

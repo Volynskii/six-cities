@@ -11,7 +11,7 @@ const OffersList = ({
   setActiveItem,
   setFavoriteAsync
 }) => {
-  console.log(cards)
+
   return (
     <div className="cities__places-list places__list tabs__content">
       {cards.map((item, index) => {
@@ -19,9 +19,8 @@ const OffersList = ({
 
         return (
           <Card
-            key={index}
-            // id={item.id}
-            id={index + 1}
+            key={item.id}
+            id={item.id}
             city={city}
             title={item.title}
             image={item.image}
@@ -32,8 +31,8 @@ const OffersList = ({
             isPremium={item.isPremium}
             isActive={isActive}
             isFavorite={item.isFavorite}
-            setActiveItem={() => setActiveItem(index + 1)}
-            setFavoriteAsync={() => setFavoriteAsync(index, 1)}
+            setActiveItem={() => setActiveItem(item.id)}
+            setFavoriteAsync={() => setFavoriteAsync(item.id, 1)}
           />
         );
       })}

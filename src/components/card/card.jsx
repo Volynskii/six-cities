@@ -17,7 +17,6 @@ const Card = ({
   setActiveItem,
   setFavoriteAsync
 }) => {
-console.log(id)
   const onCardClick = (evt) => {
     evt.preventDefault();
     setActiveItem();

@@ -4,8 +4,8 @@ const FORBIDDEN_STATUS = 403;
 
 export const createAPI = (onLoginFail) => {
   const api = axios.create({
-  //  baseURL: `https://htmlacademy-react-2.appspot.com/six-cities`,
-    baseURL: `https://es31-server.appspot.com/six-cities`,
+   baseURL: `https://htmlacademy-react-2.appspot.com/six-cities`,
+ //   baseURL: `https://es31-server.appspot.com/six-cities`,
     timeout: 5000,
     withCredentials: true
   });

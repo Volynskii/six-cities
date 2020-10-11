@@ -7,6 +7,7 @@ export const getCityOffers = createSelector(
       if (!currentCity) {
         return {};
       }
+
       return currentCity.offers;
     }
 );

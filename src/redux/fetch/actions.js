@@ -47,6 +47,7 @@ export const setFavoriteAsync = (hotelId, status) => (
       }
     })
     .catch((error) => {
+      console.log('here come the error')
       throw error;
     });
 };

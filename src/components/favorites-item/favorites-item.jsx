@@ -14,7 +14,7 @@ const FavoritesItem = ({city, offers, setFavoriteAsync}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {offers.map((item, index) => {
+        {offers.map((item) => {
           return (
             <FavoritesCard
               key={item.id}
@@ -24,7 +24,7 @@ const FavoritesItem = ({city, offers, setFavoriteAsync}) => {
               image={item.image}
               type={item.type}
               isFavorite={item.isFavorite}
-              setFavoriteAsync={() => setFavoriteAsync(index + 1, 0)}
+              setFavoriteAsync={() => setFavoriteAsync(item.id, 0)}
             />
           );
         })}
