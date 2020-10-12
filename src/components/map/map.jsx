@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 import leaflet from "leaflet";
 class Map extends Component {
@@ -16,7 +16,10 @@ class Map extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.cards !== prevProps.cards) {
+    if (
+      this.props.activeItem !== prevProps.activeItem ||
+      this.props.cards !== prevProps.cards
+    ) {
       this._layerGroup.clearLayers();
       this._map.setView(this.props.city, this.settings.zoom);
       this._addMarkers();
@@ -30,19 +33,26 @@ class Map extends Component {
     });
   }
 
-  _addMarkers() {
-    const icon = this._icon;
-    const { cards } = this.props;
-    this._layerGroup = leaflet.layerGroup().addTo(this._map);
-
-    cards.map(({ location: { latitude, longitude }, title }) => {
-      leaflet
-        .marker([latitude, longitude], { icon, title })
-        .addTo(this._layerGroup);
+  get _activeIcon() {
+    return leaflet.icon({
+      iconUrl: `img/icon-pin-active.svg`,
+      iconSize: [30, 30]
     });
   }
+
+  _addMarkers() {
+    const {cards, activeItem} = this.props;
+    const getIcon = (id) => (id === activeItem ? this._activeIcon : this._icon);
+    this._layerGroup = leaflet.layerGroup().addTo(this._map);
+
+    cards.map(({id, location: {latitude, longitude}, title}) =>
+      leaflet
+        .marker([latitude, longitude], {icon: getIcon(id), title})
+        .addTo(this._layerGroup)
+    );
+  }
   _initMap() {
-    const { city } = this.props;
+    const {city} = this.props;
     this._map = leaflet.map(`map`, this.settings);
     this._map.setView(city, this.settings.zoom);
     leaflet
@@ -73,7 +83,8 @@ Map.propTypes = {
         isPremium: PropTypes.bool
       })
   ),
-  city: PropTypes.arrayOf(PropTypes.number)
+  city: PropTypes.arrayOf(PropTypes.number),
+  activeItem: PropTypes.number
 };
 
 export default Map;
