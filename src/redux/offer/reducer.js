@@ -19,6 +19,14 @@ export const offerReducer = (state = initialState, {type, payload}) => {
         comments: payload
       };
 
+    case types.UPDATE_OFFER:
+      return {
+        ...state,
+        currentOffer: {
+          ...state.currentOffer,
+          isFavorite: !state.currentOffer.isFavorite
+        }
+      };
     default:
       return state;
   }
