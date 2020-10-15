@@ -10,7 +10,7 @@ export const offerReducer = (state = initialState, {type, payload}) => {
     case types.LOAD_OFFER:
       return {
         ...state,
-        currentOffer: null,
+        currentOffer: payload
       };
 
     case types.LOAD_COMMENTS:
