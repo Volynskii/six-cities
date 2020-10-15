@@ -31,6 +31,7 @@ class Offer extends Component {
     }
 
     const {
+      id,
       cityLocation,
       bedrooms,
       rating,
@@ -149,7 +150,8 @@ class Offer extends Component {
           </div>
           <section className="property__map map map--offer">
             <Map
-              cards={offers}
+              activePin={id}
+              cards={offers.concat([offer])}
               city={[cityLocation.latitude, cityLocation.longitude]}
             />
           </section>
