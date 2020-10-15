@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 
 import SignIn from "../../components/sign-in/sign-in.jsx";
-
+import {setCity} from "../../redux/hotels/actions.js";
 import {loginAsync} from "../../redux/auth/actions.js";
 
 export const SignInContainer = (props) => {
@@ -20,6 +20,7 @@ const mapStateToProps = ({auth}) => {
   };
 };
 const mapDispatchToProps = {
+  setCity,
   loginAsync
 };
 
