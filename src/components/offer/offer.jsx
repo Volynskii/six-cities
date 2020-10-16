@@ -24,7 +24,14 @@ class Offer extends Component {
   }
 
   render() {
-    const { offers, offer, comments, isAuthenticated } = this.props;
+    const {
+      offers,
+      offer,
+      comments,
+      isAuthenticated,
+      setFavoriteAsync,
+      sendReviewAsync
+    } = this.props;
 
     if (!offer) {
       return `Загрузка...`;
@@ -145,7 +152,9 @@ class Offer extends Component {
                 </div>
               </div>
               <ReviewsList comments={comments} />
-              {isAuthenticated && <ReviewForm />}
+              {isAuthenticated && (
+                <ReviewForm hotelId={id} sendReviewAsync={sendReviewAsync} />
+              )}
             </div>
           </div>
           <section className="property__map map map--offer">

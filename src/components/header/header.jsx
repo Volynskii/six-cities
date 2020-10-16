@@ -1,10 +1,11 @@
 import React from "react";
-import PropTypes from "react";
-import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const BASE_URL = `https://htmlacademy-react-2.appspot.com/six-cities`;
-const Header = ({user, isAuthenticated}) => {
-  const {email, avatarUrl} = user;
+const BASE_URL = `https://es31-server.appspot.com/six-cities`;
+
+const Header = ({ user, isAuthenticated }) => {
+  const { email, avatarUrl } = user;
 
   return (
     <header className="header">
@@ -30,7 +31,6 @@ const Header = ({user, isAuthenticated}) => {
                 <Link
                   to="/login"
                   className="header__nav-link header__nav-link--profile"
-
                 >
                   {!isAuthenticated ? (
                     <>

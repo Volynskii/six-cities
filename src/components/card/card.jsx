@@ -90,7 +90,6 @@ Card.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  imageExtension: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,
