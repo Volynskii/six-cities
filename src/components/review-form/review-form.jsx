@@ -58,8 +58,14 @@ const ReviewForm = ({
         placeholder="Tell how was your stay, what you like and what can be improved"
         value={comment}
         onChange={setComment}
-        disabled={isFormDisabled}
+        disabled={isFormDisabled && !sendFormError}
       />
+      {sendFormError && (
+        <span className={`form__error error`}>
+          При отправке формы возникла ошибка: {sendFormError}. Пожалуйста,
+          попробуйте позже.
+        </span>
+      )}
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
           To submit review please make sure to set
