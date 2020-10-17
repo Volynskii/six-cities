@@ -1,3 +1,3 @@
 export const LOADING_START = `LOADING_START`;
 export const LOADING_FINISH = `LOADING_FINISH`;
-export const SET_CITY = 'SET_CITY';
+export const SET_LOADING_ERROR = `SET_LOADING_ERROR`;
