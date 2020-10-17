@@ -4,25 +4,26 @@ import withReview from "../../hocs/with-review/with-review.js";
 const ratingCases = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
 
 const ReviewForm = ({
-  isDisabled,
+  isSubmitDisabled,
+  isFormDisabled,
   comment,
+  rating,
+  sendFormError,
   setRating,
   setComment,
-  onSubmit
+  handleSubmitForm
 }) => {
   return (
     <form
       className="reviews__form form"
       action="#"
       method="post"
-      onSubmit={onSubmit}
+      onSubmit={handleSubmitForm}
     >
       <label className="reviews__label form__label" htmlFor="review">
         Your review
       </label>
       <div className="reviews__rating-form form__rating">
-
-
         {ratingCases.map((item, index) => {
           const count = ratingCases.length - index;
           return (
@@ -34,6 +35,8 @@ const ReviewForm = ({
                 id={`${count}-stars`}
                 type="radio"
                 onChange={setRating}
+                checked={count === Number(rating)}
+                disabled={isFormDisabled && !sendFormError}
               />
               <label
                 htmlFor={`${count}-stars`}
@@ -55,6 +58,7 @@ const ReviewForm = ({
         placeholder="Tell how was your stay, what you like and what can be improved"
         value={comment}
         onChange={setComment}
+        disabled={isFormDisabled}
       />
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
@@ -65,7 +69,7 @@ const ReviewForm = ({
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled={isDisabled}
+          disabled={isSubmitDisabled}
         >
           Submit
         </button>

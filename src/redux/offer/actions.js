@@ -4,18 +4,21 @@ import {parseComments} from "../../helpers/parse-comments.js";
 import {modifyOffer} from "../../helpers/modify-offer.js";
 
 export const sendReviewAsync = (hotelId, rating, comment) => (
-  dispatch,
-  _getState,
-  api
+    dispatch,
+    _getState,
+    api
 ) => {
   return api
-    .post(`/comments/${hotelId}`, { rating, comment })
+    .post(`/comments/${hotelId}`, {rating, comment})
     .then((response) => {
       if (response.data) {
         dispatch(updateComments(response.data));
       }
     })
-    .catch(() => {});
+    .catch((error) => {
+      const formError = (error.response && error.response.data) || {};
+      dispatch(setReviewFormError(formError.error || error.message));
+    });
 };
 
 export const loadOffer = (id, hotels) => {
@@ -47,5 +50,12 @@ export const updateComments = (data) => {
   return {
     type: types.UPDATE_COMMENTS,
     payload: comments
+  };
+};
+
+export const setReviewFormError = (error) => {
+  return {
+    type: types.SET_REVIEW_FORM_ERROR,
+    payload: error
   };
 };
