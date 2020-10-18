@@ -14,7 +14,6 @@ const ReviewForm = ({
   setComment,
   handleSubmitForm
 }) => {
-  console.log(rating)
   return (
     <form
       className="reviews__form form"
@@ -90,6 +89,7 @@ ReviewForm.propTypes = {
   isSubmitDisabled: PropTypes.bool,
   isFormDisabled: PropTypes.bool,
   comment: PropTypes.string,
+  rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   sendFormError: PropTypes.string,
   setRating: PropTypes.func,
   setComment: PropTypes.func,
