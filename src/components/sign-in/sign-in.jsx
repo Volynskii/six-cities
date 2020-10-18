@@ -2,10 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import withLogin from "../../hocs/with-login/with-login.js";
+import withPrivateRoute from "../../hocs/with-private/with-private.js";
+import {compose} from "../../helpers/compose.js";
 
 const START_CITY = `Amsterdam`;
 
-const SignIn = ({ errors, setCity, handleInputChange, handleFormSubmit }) => {
+const SignIn = ({errors, setCity, handleInputChange, handleFormSubmit}) => {
   return (
     <main className="page__main page__main--login">
       <div className="page__login-container container">
@@ -68,4 +70,7 @@ SignIn.propTypes = {
   handleFormSubmit: PropTypes.func
 };
 
-export default withLogin(SignIn);
+export default compose(
+    withLogin,
+    withPrivateRoute
+)(SignIn);
