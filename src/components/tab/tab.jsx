@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
-const Tab = ({ label, isActive, setActiveItem, setCity}) => {
+const Tab = ({ label, isActive, setActiveItem, setCity }) => {
   const onClick = (evt) => {
     evt.preventDefault();
     setActiveItem();

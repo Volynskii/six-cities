@@ -1,13 +1,12 @@
 // Core
-import {combineReducers} from "redux";
-import {connectRouter} from "connected-react-router";
+import { combineReducers } from "redux";
+import { connectRouter } from "connected-react-router";
 
 // Reducers
-import {hotelsReducer} from "./hotels/reducer";
-import {fetchReducer} from "./fetch/reducer";
-import {authReducer} from "./auth/reducer";
-import {offerReducer} from "./offer/reducer";
-
+import { fetchReducer } from "./fetch/reducer";
+import { hotelsReducer } from "./hotels/reducer";
+import { authReducer } from "./auth/reducer";
+import { offerReducer } from "./offer/reducer";
 
 export const rootReducer = (history) =>
   combineReducers({

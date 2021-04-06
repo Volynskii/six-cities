@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 
 const withActiveItem = (Component) => {
   class WithActiveItem extends PureComponent {
@@ -19,11 +19,11 @@ const withActiveItem = (Component) => {
     }
 
     _setActiveItem(value) {
-      this.setState({activeItem: value});
+      this.setState({ activeItem: value });
     }
 
     render() {
-      const {activeItem} = this.state;
+      const { activeItem } = this.state;
 
       return (
         <Component

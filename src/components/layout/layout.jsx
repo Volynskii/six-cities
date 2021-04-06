@@ -1,5 +1,4 @@
-import React, {Component} from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
 import Header from "../header/header.jsx";
@@ -13,8 +12,13 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, location, isAuthenticated, user } = this.props;
+    const { children, offers, location, isAuthenticated, user } = this.props;
     const isLoginPage = location.pathname === `/login`;
+
+    if (!offers) {
+      return `Загрузка...`;
+    }
+
     return (
       <div className={cn(`page page--gray`, { [`page--login`]: isLoginPage })}>
         <SvgSprite />
@@ -27,6 +31,7 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  offers: PropTypes.instanceOf(Map),
   children: PropTypes.node,
   location: PropTypes.object,
   user: PropTypes.object,
@@ -34,4 +39,5 @@ Layout.propTypes = {
   getData: PropTypes.func,
   checkLoginAsync: PropTypes.func
 };
+
 export default Layout;

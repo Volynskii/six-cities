@@ -2,6 +2,7 @@ export const parseAuthData = (data) => {
   if (!data) {
     return null;
   }
+
   return {
     id: data.id,
     email: data.email,

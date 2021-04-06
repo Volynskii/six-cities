@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import withPrivateRoute from "../../hocs/with-private/with-private.js";
 import FavoritesFull from "../favorites-full/favorites-full.jsx";
@@ -11,10 +11,12 @@ class Favorites extends Component {
 
   render() {
     const { favorite, setFavoriteAsync } = this.props;
+
     return (
       <>
         {favorite.length ? (
           <FavoritesFull
+            key={favorite.size}
             favorite={favorite}
             setFavoriteAsync={setFavoriteAsync}
           />
@@ -28,9 +30,8 @@ class Favorites extends Component {
 
 Favorites.propTypes = {
   favorite: PropTypes.array,
-  email: PropTypes.string,
   getFavorite: PropTypes.func,
   setFavoriteAsync: PropTypes.func
-
 };
+
 export default withPrivateRoute(Favorites);

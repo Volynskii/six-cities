@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import {SortCases} from "../../helpers/sort-cases.js";
+import { SortCases } from "../../helpers/sort-cases.js";
 
-const Form = ({isSortMenuOpen, sortType, setSortType, toggleSortMenu}) => {
+const Form = ({ isSortMenuOpen, sortType, setSortType, toggleSortMenu }) => {
   return (
     <form className="places__sorting" action="#" method="get">
       <span className="places__sorting-caption">Sort by</span>

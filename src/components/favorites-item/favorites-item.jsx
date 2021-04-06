@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import FavoritesCard from "../favorites-card/favorites-card.jsx";
 
-const FavoritesItem = ({city, offers, setFavoriteAsync}) => {
+const FavoritesItem = ({ city, offers, setFavoriteAsync }) => {
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
@@ -14,17 +14,17 @@ const FavoritesItem = ({city, offers, setFavoriteAsync}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {offers.map((item) => {
+        {offers.map((item, index) => {
           return (
             <FavoritesCard
-              key={item.id}
+              key={index}
               title={item.title}
               price={item.price}
               rating={item.rating}
               image={item.image}
               type={item.type}
               isFavorite={item.isFavorite}
-              setFavoriteAsync={() => setFavoriteAsync(item.id, 0)}
+              setFavoriteAsync={() => setFavoriteAsync(item.id, 1)}
             />
           );
         })}
@@ -35,7 +35,8 @@ const FavoritesItem = ({city, offers, setFavoriteAsync}) => {
 
 FavoritesItem.propTypes = {
   offers: PropTypes.array,
-  city: PropTypes.string
+  city: PropTypes.string,
+  setFavoriteAsync: PropTypes.func
 };
 
 export default FavoritesItem;

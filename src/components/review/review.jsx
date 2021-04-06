@@ -2,10 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 
-
-const Review = ({user, rating, comment, date}) => {
-  const {name, avatarUrl} = user;
-
+const Review = ({ user, rating, comment, date }) => {
+  const { name, avatarUrl } = user;
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
@@ -23,7 +21,7 @@ const Review = ({user, rating, comment, date}) => {
       <div className="reviews__info">
         <div className="reviews__rating rating">
           <div className="reviews__stars rating__stars">
-            <span style={{width: `${(rating / 5) * 100}%`}} />
+            <span style={{ width: `${(rating / 5) * 100}%` }} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

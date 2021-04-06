@@ -10,10 +10,9 @@ const OffersList = ({
   setActiveItem,
   setFavoriteAsync
 }) => {
-
   return (
     <div className="cities__places-list places__list tabs__content">
-      {cards.map((item, index) => {
+      {cards.map((item) => {
         const isActive = activeItem === item.id;
 
         return (

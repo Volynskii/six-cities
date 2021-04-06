@@ -1,5 +1,5 @@
-import React, {PureComponent} from "react";
-import {SortCases} from "../../helpers/sort-cases";
+import React, { PureComponent } from "react";
+import { SortCases } from "../../helpers/sort-cases.js";
 
 const withSortOffers = (Component) => {
   class WithSortOffers extends PureComponent {
@@ -40,7 +40,7 @@ const withSortOffers = (Component) => {
     }
 
     _setSortType(evt) {
-      this.setState({sortType: evt.target.textContent});
+      this.setState({ sortType: evt.target.textContent });
       this._closeSortMenu();
     }
 
@@ -53,7 +53,7 @@ const withSortOffers = (Component) => {
     }
 
     render() {
-      const {isSortMenuOpen, sortType} = this.state;
+      const { isSortMenuOpen, sortType } = this.state;
 
       return (
         <Component

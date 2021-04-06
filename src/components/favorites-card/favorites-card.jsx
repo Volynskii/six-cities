@@ -45,7 +45,7 @@ const FavoritesCard = ({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${(rating / 5) * 100}%`}} />
+            <span style={{ width: `${(rating / 5) * 100}%` }} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -63,7 +63,9 @@ FavoritesCard.propTypes = {
   type: PropTypes.string,
   rating: PropTypes.number,
   price: PropTypes.number,
-  image: PropTypes.string
+  image: PropTypes.string,
+  isFavorite: PropTypes.bool,
+  setFavoriteAsync: PropTypes.func
 };
 
 export default FavoritesCard;

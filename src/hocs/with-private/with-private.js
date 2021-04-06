@@ -1,11 +1,11 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const withPrivateRoute = (Component) => {
   class WithPrivate extends PureComponent {
     render() {
-      const {isAuthenticated} = this.props;
+      const { isAuthenticated } = this.props;
 
       if (!isAuthenticated) {
         return <Redirect to="/login" />;

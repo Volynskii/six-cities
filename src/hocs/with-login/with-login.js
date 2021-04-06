@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
 const withLogin = (Component) => {
@@ -16,7 +16,7 @@ const withLogin = (Component) => {
     }
 
     _handleInputChange(evt) {
-      const {value, name} = evt.target;
+      const { value, name } = evt.target;
 
       this.setState({
         [name]: value
@@ -26,8 +26,8 @@ const withLogin = (Component) => {
     _handleFormSubmit(evt) {
       evt.preventDefault();
 
-      const {email, password} = this.state;
-      const {loginAsync} = this.props;
+      const { email, password } = this.state;
+      const { loginAsync } = this.props;
 
       loginAsync(email, password);
     }

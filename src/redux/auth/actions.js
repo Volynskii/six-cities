@@ -1,13 +1,12 @@
 import * as types from "./types";
-import {history} from "../index";
-import {parseAuthData} from "../../helpers/parse-auth-data";
-
+import { history } from "../index.js";
+import { parseAuthData } from "../../helpers/parse-auth-data.js";
 
 const BAD_REQUEST_STATUS = 400;
 
 export const loginAsync = (email, password) => (dispatch, _getState, api) => {
   return api
-    .post(`/login`, {email, password})
+    .post(`/login`, { email, password })
     .then((response) => {
       if (response.data) {
         history.push(`/`);

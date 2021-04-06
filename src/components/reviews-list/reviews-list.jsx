@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Review from "../review/review.jsx";
 
-const ReviewsList = ({comments}) => {
+const ReviewsList = ({ comments }) => {
   return (
     <section className="property__reviews reviews">
       <h2 className="reviews__title">

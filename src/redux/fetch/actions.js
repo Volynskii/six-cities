@@ -1,12 +1,13 @@
 import * as types from "./types.js";
-import {loadHotels, updateOffers, loadFavorite} from "../hotels/actions.js";
-import {loadOffer, loadComments} from "../offer/actions.js";
-import {history} from "../index";
+import { loadHotels, updateOffers, loadFavorite } from "../hotels/actions.js";
+import { updateOffer } from "../offer/actions.js";
+import { loadOffer, loadComments } from "../offer/actions.js";
+import { history } from "../index";
 
 const FORBIDDEN_REQUEST_STATUS = 403;
 
 export const setRedirect = (error) => {
-  if (error.response.status) {
+  if (error.response) {
     if (error.response.status === FORBIDDEN_REQUEST_STATUS) {
       history.push(`/login`);
     }
@@ -55,13 +56,13 @@ export const setFavoriteAsync = (hotelId, status) => (
     .then((response) => {
       if (response.data) {
         dispatch(updateOffers(response.data));
+        dispatch(updateOffer(response.data));
       }
     })
     .catch((error) => {
       setRedirect(error);
     });
 };
-
 
 const loadingStart = () => {
   return {
@@ -74,5 +75,3 @@ const loadingFinish = () => {
     type: types.LOADING_FINISH
   };
 };
-
-

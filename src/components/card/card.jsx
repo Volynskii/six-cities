@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import cn from "classnames";
 
 const Card = ({
@@ -21,7 +21,6 @@ const Card = ({
     evt.preventDefault();
     setActiveItem();
   };
-
   return (
     <article
       className={cn(`cities__place-card place-card`, {
@@ -69,7 +68,7 @@ const Card = ({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}%`}} />
+            <span style={{ width: `${rating}%` }} />
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
@@ -81,6 +80,7 @@ const Card = ({
     </article>
   );
 };
+
 Card.defaultProps = {
   rating: 0,
   isPremium: false
@@ -90,7 +90,6 @@ Card.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  imageExtension: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   currency: PropTypes.string.isRequired,

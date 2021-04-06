@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 import TabsList from "../tabs-list/tabs-list.jsx";
@@ -9,8 +9,8 @@ import MainEmpty from "../main-empty/main-empty.jsx";
 
 import withActiveItem from "../../hocs/with-active-item/with-active-item.js";
 import withSortOffers from "../../hocs/with-sort-offers/with-sort-offers.js";
-import {compose} from "../../helpers/compose.js";
 
+import { compose } from "../../helpers/compose.js";
 
 class Main extends Component {
   render() {
@@ -36,13 +36,13 @@ class Main extends Component {
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <TabsList tabs={cities} city={city} setCity={setCity} />
-        {offers.length ? (
+        {sortedOffers.length ? (
           <div className="cities__places-wrapper">
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
                 <b className="places__found">{`${
-                  offers.length
+                  sortedOffers.length
                 } places to stay in ${city}`}</b>
                 <Form
                   isSortMenuOpen={isSortMenuOpen}
@@ -99,7 +99,6 @@ Main.propTypes = {
   city: PropTypes.string,
   cityCoords: PropTypes.object,
   activeItem: PropTypes.number,
-  getData: PropTypes.func,
   setCity: PropTypes.func,
   setFavoriteAsync: PropTypes.func,
   setSortType: PropTypes.func,

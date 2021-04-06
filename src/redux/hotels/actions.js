@@ -1,8 +1,8 @@
 import * as types from "./types.js";
-import {parseLocations} from "../../helpers/parse-locations";
-import {parseOffers} from "../../helpers/parse-offers";
-import {parseCities} from "../../helpers/parse-cities";
-import {modifyOffer} from "../../helpers/modify-offer.js";
+import { parseLocations } from "../../helpers/parse-locations.js";
+import { parseOffers } from "../../helpers/parse-offers.js";
+import { parseCities } from "../../helpers/parse-cities.js";
+import { modifyOffer } from "../../helpers/modify-offer.js";
 
 export const loadHotels = (hotels) => {
   const cities = parseCities(hotels);
@@ -11,7 +11,7 @@ export const loadHotels = (hotels) => {
 
   return {
     type: types.GET_HOTELS,
-    payload: {cities, locations, offers}
+    payload: { cities, locations, offers }
   };
 };
 

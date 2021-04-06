@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Switch, Route, Redirect} from "react-router-dom";
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LayoutContainer from "../../containers/layout-container/layout-container.jsx";
 import MainContainer from "../../containers/main-container/main-container.jsx";
 import SignInContainer from "../../containers/sign-in-container/sign-in-container.jsx";
@@ -7,9 +7,7 @@ import FavoritesContainer from "../../containers/favorites-container/favorites-c
 import OfferContainer from "../../containers/offer-container/offer-container.jsx";
 
 class App extends Component {
-
   render() {
-
     return (
       <LayoutContainer>
         <Switch>

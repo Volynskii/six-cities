@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const MainEmpty = ({city}) => {
+const MainEmpty = ({ city }) => {
   return (
     <main className="page__main page__main--index page__main--index-empty">
       <div className="cities__places-wrapper">

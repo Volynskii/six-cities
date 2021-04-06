@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import withLogin from "../../hocs/with-login/with-login.js";
 
-const SignIn = ({errors, handleInputChange, handleFormSubmit}) => {
+const SignIn = ({ errors, handleInputChange, handleFormSubmit }) => {
   return (
     <main className="page__main page__main--login">
       <div className="page__login-container container">
