@@ -1,10 +1,11 @@
 import * as types from "./types";
 
 const initialState = {
-  isLoading: false
+  isLoading: false,
+  error: null
 };
 
-export const fetchReducer = (state = initialState, { type }) => {
+export const fetchReducer = (state = initialState, {type, payload}) => {
   switch (type) {
     case types.LOADING_START:
       return {
@@ -17,7 +18,11 @@ export const fetchReducer = (state = initialState, { type }) => {
         ...state,
         isLoading: false
       };
-
+    case types.SET_LOADING_ERROR:
+      return {
+        ...state,
+        error: payload
+      };
     default:
       return state;
   }

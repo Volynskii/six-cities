@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
+=======
+import React, {Component} from "react";
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
 import PropTypes from "prop-types";
 import cn from "classnames";
 import Header from "../header/header.jsx";
@@ -12,15 +16,22 @@ class Layout extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     const { children, offers, location, isAuthenticated, user } = this.props;
+=======
+    const {children, offers, location, isAuthenticated, user} = this.props;
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
     const isLoginPage = location.pathname === `/login`;
 
     if (!offers) {
       return `Загрузка...`;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
     return (
-      <div className={cn(`page page--gray`, { [`page--login`]: isLoginPage })}>
+      <div className={cn(`page page--gray`, {[`page--login`]: isLoginPage})}>
         <SvgSprite />
         <Header isAuthenticated={isAuthenticated} user={user} />
         {children}

@@ -2,14 +2,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import Review from "../review/review.jsx";
 
+<<<<<<< HEAD
 const ReviewsList = ({ comments }) => {
+=======
+import {sortByDate} from "../../helpers/sort-by-date";
+
+const ReviewsList = ({comments}) => {
+  const commentToDisplay = comments.sort(sortByDate).slice(0, 10);
+
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
   return (
     <section className="property__reviews reviews">
       <h2 className="reviews__title">
-        Reviews &middot; <span className="reviews__amount">1</span>
+        Reviews &middot;
+        <span className="reviews__amount">{commentToDisplay.length}</span>
       </h2>
       <ul className="reviews__list">
-        {comments.map((item) => {
+        {commentToDisplay.map((item) => {
           return (
             <Review
               key={item.id}

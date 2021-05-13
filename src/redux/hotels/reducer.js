@@ -26,6 +26,10 @@ export const hotelsReducer = (state = initialState, { type, payload }) => {
       };
 
     case types.UPDATE_OFFERS:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
       return {
         ...state,
         offers: updateFavoritesOffers(payload, state.offers),

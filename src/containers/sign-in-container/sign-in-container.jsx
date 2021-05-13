@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { loginAsync } from "../../redux/auth/actions.js";
 
 import SignIn from "../../components/sign-in/sign-in.jsx";
+<<<<<<< HEAD
+=======
+import {setCity} from "../../redux/hotels/actions.js";
+import {loginAsync} from "../../redux/auth/actions.js";
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
 
 export const SignInContainer = (props) => {
   return <SignIn {...props} />;
@@ -20,6 +25,7 @@ const mapStateToProps = ({ auth }) => {
 };
 
 const mapDispatchToProps = {
+  setCity,
   loginAsync
 };
 

@@ -1,11 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 
 const BASE_URL = `https://es31-server.appspot.com/six-cities`;
 
 const Header = ({ user, isAuthenticated }) => {
   const { email, avatarUrl } = user;
+=======
+import {Link} from "react-router-dom";
+
+const BASE_URL = `https://es31-server.appspot.com/six-cities`;
+
+const Header = ({user, isAuthenticated}) => {
+  const {email, avatarUrl} = user;
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
 
   return (
     <header className="header">
@@ -28,6 +37,7 @@ const Header = ({ user, isAuthenticated }) => {
           <nav className="header__nav">
             <ul className="header__nav-list">
               <li className="header__nav-item user">
+<<<<<<< HEAD
                 <Link
                   to="/login"
                   className="header__nav-link header__nav-link--profile"
@@ -54,6 +64,35 @@ const Header = ({ user, isAuthenticated }) => {
                     </>
                   )}
                 </Link>
+=======
+                {!isAuthenticated ? (
+                  <Link
+                    to="/login"
+                    className="header__nav-link header__nav-link--profile"
+                  >
+                    <div className="header__avatar-wrapper user__avatar-wrapper" />
+                    <span className="header__user-name user__name">
+                      Sign in
+                    </span>
+                  </Link>
+                ) : (
+                  <Link
+                    to="/favorites"
+                    className="header__nav-link header__nav-link--profile"
+                  >
+                    <div
+                      className="header__avatar-wrapper user__avatar-wrapper"
+                      style={{
+                        backgroundImage: `url(${BASE_URL}${avatarUrl})`,
+                        borderRadius: `50px`
+                      }}
+                    />
+                    <span className="header__user-name user__name">
+                      {email}
+                    </span>
+                  </Link>
+                )}
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
               </li>
             </ul>
           </nav>

@@ -26,14 +26,23 @@ class Offer extends Component {
       offer,
       comments,
       isAuthenticated,
+<<<<<<< HEAD
       setFavoriteAsync
     } = this.props;
  console.log(offer)
+=======
+      sendFormError,
+      setFavoriteAsync,
+      sendReviewAsync
+    } = this.props;
+
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
     if (!offer) {
       return `Загрузка...`;
     }
 
     const {
+      id,
       cityLocation,
       bedrooms,
       rating,
@@ -153,12 +162,19 @@ class Offer extends Component {
                 </div>
               </div>
               <ReviewsList comments={comments} />
-              {isAuthenticated && <ReviewForm />}
+              {isAuthenticated && (
+                <ReviewForm
+                  hotelId={id}
+                  sendFormError={sendFormError}
+                  sendReviewAsync={sendReviewAsync}
+                />
+              )}
             </div>
           </div>
           <section className="property__map map map--offer">
             <Map
-              cards={offers}
+              activePin={id}
+              cards={offers.concat([offer])}
               city={[cityLocation.latitude, cityLocation.longitude]}
             />
           </section>
@@ -183,10 +199,15 @@ Offer.propTypes = {
   offer: PropTypes.object,
   offers: PropTypes.array,
   comments: PropTypes.array,
+  sendFormError: PropTypes.string,
   match: PropTypes.object,
   getData: PropTypes.func,
   getOffer: PropTypes.func,
   getComments: PropTypes.func,
+<<<<<<< HEAD
+=======
+  sendReviewAsync: PropTypes.func,
+>>>>>>> 58498a99d3483bef44b8cae14bac447a51bc239d
   setFavoriteAsync: PropTypes.func
 };
 
